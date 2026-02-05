@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Dana Woodworks Design System - Elegant Black & White */
+
+@layer base {
+     :root {
+        /* Clean black and white luxury palette */
+        --background: 0 0% 100%;
+        --foreground: 0 0% 8%;
+        --card: 0 0% 98%;
+        --card-foreground: 0 0% 8%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 8%;
+        /* Deep black - primary brand color */
+        --primary: 240 10% 3.9216%;
+        --primary-foreground: 0 0% 100%;
+        /* Light gray secondary */
+        --secondary: 0 0% 96%;
+        --secondary-foreground: 0 0% 8%;
+        /* Muted gray */
+        --muted: 0 0% 94%;
+        --muted-foreground: 0 0% 45%;
+        /* Charcoal accent for elegant touches */
+        --accent: 255 100% 100%;
+        --accent-foreground: 0 0% 0%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 0 0% 90%;
+        --input: 0 0% 90%;
+        --ring: 0 0% 8%;
+        --radius: 0.25rem;
+        /* Custom tokens for Dana Woodworks */
+        --black-deep: 0 0% 4%;
+        --black-medium: 0 0% 8%;
+        --black-soft: 0 0% 15%;
+        --white: 0 0% 100%;
+        --white-soft: 0 0% 98%;
+        --gray: 0 0% 45%;
+        --gray-light: 0 0% 75%;
+        /* Typography */
+        --font-serif: 'Playfair Display', serif;
+        --font-sans: 'Inter', system-ui, sans-serif;
+        /* Shadows */
+        --shadow-soft: 0 4px 20px -4px hsl(0 0% 0% / 0.08);
+        --shadow-medium: 0 8px 30px -6px hsl(0 0% 0% / 0.12);
+        --shadow-elevated: 0 20px 50px -12px hsl(0 0% 0% / 0.18);
+        --sidebar-background: 0 0% 98%;
+        --sidebar-foreground: 0 0% 8%;
+        --sidebar-primary: 0 0% 8%;
+        --sidebar-primary-foreground: 0 0% 100%;
+        --sidebar-accent: 0 0% 96%;
+        --sidebar-accent-foreground: 0 0% 8%;
+        --sidebar-border: 0 0% 90%;
+        --sidebar-ring: 0 0% 8%;
+    }
+    .dark {
+        --background: 0 0% 6%;
+        --foreground: 0 0% 96%;
+        --card: 0 0% 10%;
+        --card-foreground: 0 0% 96%;
+        --popover: 0 0% 6%;
+        --popover-foreground: 0 0% 96%;
+        --primary: 0 0% 100%;
+        --primary-foreground: 0 0% 6%;
+        --secondary: 0 0% 14%;
+        --secondary-foreground: 0 0% 96%;
+        --muted: 0 0% 14%;
+        --muted-foreground: 0 0% 60%;
+        --accent: 0 0% 85%;
+        --accent-foreground: 0 0% 6%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 0 0% 96%;
+        --border: 0 0% 18%;
+        --input: 0 0% 18%;
+        --ring: 0 0% 100%;
+        --sidebar-background: 0 0% 8%;
+        --sidebar-foreground: 0 0% 96%;
+        --sidebar-primary: 0 0% 100%;
+        --sidebar-primary-foreground: 0 0% 6%;
+        --sidebar-accent: 0 0% 14%;
+        --sidebar-accent-foreground: 0 0% 96%;
+        --sidebar-border: 0 0% 18%;
+        --sidebar-ring: 0 0% 100%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground antialiased;
+        font-family: var(--font-sans);
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--font-serif);
+    }
+}
+
+@layer components {
+    .section-label {
+        @apply text-xs uppercase tracking-[0.2em] text-accent font-medium mb-4;
+    }
+    .section-title {
+        @apply text-4xl text-5xl text-6xl font-medium leading-tight;
+        font-family: var(--font-serif);
+    }
+    .text-gradient-dark {
+        background: linear-gradient(135deg, hsl(var(--black-medium)) 0%, hsl(var(--black-deep)) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    .hover-lift {
+        @apply transition-all duration-500 ease-out;
+    }
+    .hover-lift:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-elevated);
+    }
+    .image-reveal {
+        @apply overflow-hidden;
+    }
+    .image-reveal img {
+        @apply transition-transform duration-700 ease-out;
+    }
+    .image-reveal:hover img {
+        transform: scale(1.05);
+    }
+}
+
+@layer utilities {
+    .container-wide {
+        @apply max-w-7xl mx-auto px-6 px-8;
+    }
+    .container-narrow {
+        @apply max-w-5xl mx-auto px-6 px-8;
+    }
+}
